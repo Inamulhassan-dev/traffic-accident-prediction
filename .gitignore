@@ -1,0 +1,32 @@
+@echo off
+echo ===============================
+echo 🚀 Starting Traffic Project
+echo ===============================
+
+REM Activate virtual environment
+call venv\Scripts\activate
+
+echo.
+echo 🔧 Starting Backend...
+start "Backend" cmd /k python -m backend.run
+
+echo Waiting for backend...
+timeout /t 3 > nul
+
+echo.
+echo 🎨 Starting Frontend...
+cd frontend\traffic-prediction
+start "Frontend" cmd /k npm run dev
+
+echo Waiting for frontend to start...
+timeout /t 8 > nul
+
+echo.
+echo 🌐 Opening browser...
+
+REM Force open browser (works better)
+explorer http://localhost:5173
+
+echo.
+echo ✅ Project Running!
+pause
