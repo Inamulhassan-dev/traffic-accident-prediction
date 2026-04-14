@@ -1,32 +1,73 @@
-@echo off
-echo ===============================
-echo 🚀 Starting Traffic Project
-echo ===============================
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
 
-REM Activate virtual environment
-call venv\Scripts\activate
+# Virtual Environment
+backend/venv/
 
-echo.
-echo 🔧 Starting Backend...
-start "Backend" cmd /k python -m backend.run
+# Flask
+instance/
+.webassets-cache
 
-echo Waiting for backend...
-timeout /t 3 > nul
+# Machine Learning Models (optional - uncomment if models are large)
+# backend/models/*.pkl
 
-echo.
-echo 🎨 Starting Frontend...
-cd frontend\traffic-prediction
-start "Frontend" cmd /k npm run dev
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+frontend/traffic-prediction/node_modules/
 
-echo Waiting for frontend to start...
-timeout /t 8 > nul
+# Build
+dist/
+build/
+.vite/
+frontend/traffic-prediction/dist/
 
-echo.
-echo 🌐 Opening browser...
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-REM Force open browser (works better)
-explorer http://localhost:5173
+# Environment variables
+.env
+.env.local
+.env.production
+frontend/traffic-prediction/.env
 
-echo.
-echo ✅ Project Running!
-pause
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Backup files
+*.bak
+*.backup
