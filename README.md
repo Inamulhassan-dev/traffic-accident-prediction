@@ -156,14 +156,18 @@ Traffic-Prediction/
 │       ├── tailwind.config.js    # Tailwind config
 │       └── postcss.config.js     # PostCSS config
 │
+├── 📂 docs/                       # Documentation
+│   ├── PROJECT_STRUCTURE.txt     # Detailed structure guide
+│   ├── FINAL_CHECKLIST.txt       # Verification checklist
+│   ├── GIT_COMMANDS.md           # Git commands guide
+│   └── GITHUB_SUCCESS.md         # GitHub success guide
+│
 ├── 🔧 1-setup.bat                # Setup script
 ├── ▶️ 2-start.bat                # Start servers
 ├── ⏹️ 3-stop.bat                 # Stop servers
 ├── 📄 .gitignore                 # Git ignore rules
 ├── 📜 LICENSE                    # MIT License
-├── 📖 README.md                  # This file
-├── 📋 PROJECT_STRUCTURE.txt      # Detailed structure
-└── ✅ FINAL_CHECKLIST.txt        # Verification checklist
+└── 📖 README.md                  # This file
 ```
 
 ---
@@ -442,6 +446,19 @@ POST /api/driver-profile
 
 ---
 
+## 📚 Documentation
+
+For detailed guides and references, check the `docs/` folder:
+
+| Document | Description |
+|----------|-------------|
+| [PROJECT_STRUCTURE.txt](docs/PROJECT_STRUCTURE.txt) | Complete project structure and organization |
+| [FINAL_CHECKLIST.txt](docs/FINAL_CHECKLIST.txt) | Verification checklist and testing results |
+| [GIT_COMMANDS.md](docs/GIT_COMMANDS.md) | Git commands guide for updates |
+| [GITHUB_SUCCESS.md](docs/GITHUB_SUCCESS.md) | GitHub setup success and next steps |
+
+---
+
 ## 🔧 Troubleshooting
 
 ### Common Issues
@@ -492,9 +509,10 @@ npm install
 
 If you encounter any issues:
 1. Check the [Troubleshooting](#-troubleshooting) section
-2. Review `PROJECT_STRUCTURE.txt` for detailed information
-3. Check `FINAL_CHECKLIST.txt` for verification steps
-4. Open an issue on [GitHub](https://github.com/Inamulhassan-dev/traffic-accident-prediction/issues)
+2. Review [docs/PROJECT_STRUCTURE.txt](docs/PROJECT_STRUCTURE.txt) for detailed information
+3. Check [docs/FINAL_CHECKLIST.txt](docs/FINAL_CHECKLIST.txt) for verification steps
+4. Review [docs/GIT_COMMANDS.md](docs/GIT_COMMANDS.md) for Git help
+5. Open an issue on [GitHub](https://github.com/Inamulhassan-dev/traffic-accident-prediction/issues)
 
 ---
 
