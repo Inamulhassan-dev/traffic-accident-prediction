@@ -9,6 +9,8 @@ jobs:
   backend:
     name: Backend smoke tests
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -62,6 +64,8 @@ jobs:
   frontend:
     name: Frontend install check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
