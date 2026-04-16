@@ -16,6 +16,18 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ==============================
 data_path = os.path.join(BASE_DIR, "data", "cleaned_accident_dataset.csv")
 
+if not os.path.exists(data_path):
+    raise FileNotFoundError(
+        "\n\n❌  Dataset not found: " + data_path + "\n"
+        "\n"
+        "    Please obtain the dataset and place it at:\n"
+        "        backend/data/cleaned_accident_dataset.csv\n"
+        "\n"
+        "    Dataset format: CSV with columns including 'Accident Severity'\n"
+        "    (one-hot encoded accident records).\n"
+        "    See docs/DATASET.md for acquisition instructions.\n"
+    )
+
 df = pd.read_csv(data_path)
 
 print("✅ Dataset loaded")

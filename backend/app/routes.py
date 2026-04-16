@@ -39,6 +39,11 @@ def stats():
 def home():
     return {"message": "Traffic Accident Prediction API Running"}
 
+@api.route("/api/health")
+def health():
+    """Health check endpoint."""
+    return jsonify({"status": "healthy", "message": "API is running"})
+
 @api.route("/api/analytics")
 def analytics():
     """Return prediction analytics and insights."""
