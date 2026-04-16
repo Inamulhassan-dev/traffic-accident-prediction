@@ -9,8 +9,22 @@ class AccidentModel:
     def __init__(self):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-        self.model = pickle.load(open(os.path.join(base_dir, "models", "accident_model.pkl"), "rb"))
-        self.columns = pickle.load(open(os.path.join(base_dir, "models", "columns.pkl"), "rb"))
+        model_path = os.path.join(base_dir, "models", "accident_model.pkl")
+        columns_path = os.path.join(base_dir, "models", "columns.pkl")
+
+        if not os.path.exists(model_path) or not os.path.exists(columns_path):
+            raise FileNotFoundError(
+                "\n\n❌  Trained model files not found.\n"
+                "    Run the training script first:\n\n"
+                "        cd backend\n"
+                "        python train.py\n\n"
+                "    This will create:\n"
+                "        backend/models/accident_model.pkl\n"
+                "        backend/models/columns.pkl\n"
+            )
+
+        self.model = pickle.load(open(model_path, "rb"))
+        self.columns = pickle.load(open(columns_path, "rb"))
         
         # Store prediction history for analytics
         self.prediction_history = []

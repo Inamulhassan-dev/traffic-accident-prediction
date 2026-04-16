@@ -3,10 +3,11 @@
 <div align="center">
 
 ![Traffic Prediction](https://img.shields.io/badge/ML-Traffic%20Prediction-blue)
-![Python](https://img.shields.io/badge/Python-3.x-green)
+![Python](https://img.shields.io/badge/Python-3.10%2B-green)
 ![React](https://img.shields.io/badge/React-18-61dafb)
-![Flask](https://img.shields.io/badge/Flask-Latest-black)
+![Flask](https://img.shields.io/badge/Flask-3.1-black)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+![CI](https://github.com/Inamulhassan-dev/traffic-accident-prediction/actions/workflows/ci.yml/badge.svg)
 
 **An intelligent machine learning platform for predicting traffic accident severity with real-time analytics, driver risk profiling, and comprehensive safety recommendations.**
 
@@ -178,8 +179,8 @@ Traffic-Prediction/
 
 Before you begin, ensure you have the following installed:
 
-- ✅ **Python 3.x** - [Download Python](https://www.python.org/downloads/)
-- ✅ **Node.js** (v14 or higher) - [Download Node.js](https://nodejs.org/)
+- ✅ **Python 3.10+** - [Download Python](https://www.python.org/downloads/)
+- ✅ **Node.js** (v18 or higher) - [Download Node.js](https://nodejs.org/)
 - ✅ **Git** - [Download Git](https://git-scm.com/downloads/)
 
 ### Method 1: Automated Setup (Windows - Recommended)
@@ -216,12 +217,16 @@ venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
 
-# Install dependencies
+# Install pinned dependencies
 pip install -r requirements.txt
 
-# Train the model
+# Train the model (required before first run)
 python train.py
 ```
+
+> **Note:** The training dataset (`backend/data/cleaned_accident_dataset.csv`) is
+> included in the repository. If it is missing, see [docs/DATASET.md](docs/DATASET.md)
+> for acquisition and re-training instructions.
 
 #### Frontend Setup
 
@@ -452,6 +457,7 @@ For detailed guides and references, check the `docs/` folder:
 
 | Document | Description |
 |----------|-------------|
+| [DATASET.md](docs/DATASET.md) | Dataset acquisition and retraining guide |
 | [PROJECT_STRUCTURE.txt](docs/PROJECT_STRUCTURE.txt) | Complete project structure and organization |
 | [FINAL_CHECKLIST.txt](docs/FINAL_CHECKLIST.txt) | Verification checklist and testing results |
 | [GIT_COMMANDS.md](docs/GIT_COMMANDS.md) | Git commands guide for updates |
@@ -467,10 +473,13 @@ For detailed guides and references, check the `docs/` folder:
 ```
 InconsistentVersionWarning: Trying to unpickle estimator...
 ```
-**Solution:**
+**Solution:** Retrain the model with the installed scikit-learn version:
 ```bash
 cd backend
+# Windows:
 retrain-model.bat
+# Linux/Mac:
+python train.py
 ```
 
 #### ⚠️ Port Already in Use
